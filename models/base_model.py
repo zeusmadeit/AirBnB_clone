@@ -9,11 +9,19 @@ class BaseModel:
     """ The BaseModel class defines all common 
         attributes/methods for other classes 
     """
-    def __init__(self) -> None:
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
-    
+    def __init__(self, *args, **kwargs) -> None:
+        if len(kwargs) != 0:
+            for key, val in kwargs.items():
+                if key != "__class__":
+                    if key == "created_at" or key == "updated_at":
+                        setattr(self, key, datetime.fromisoformat(val))
+                    else:
+                        setattr(self, key, val)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+        
     def __str__(self):
         """override the __str__ method so it returns [<class name>] (<self.id>) <self.__dict__>"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
@@ -29,4 +37,3 @@ class BaseModel:
         attrs["updated_at"] = self.updated_at.isoformat()
         attrs["__class__"] = f"{self.__class__.__name__}"
         return attrs
-
