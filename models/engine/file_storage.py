@@ -14,6 +14,7 @@ class FileStorage:
     __objects = {}
 
     def __init__(self) -> None:
+        """Initialize the FileStorage class"""
         pass
 
     def all(self):
@@ -29,15 +30,15 @@ class FileStorage:
     def classes(self):
         """Returns a dictionary of valid classes and their references"""
         from models.base_model import BaseModel
-        # from models.user import User
+        from models.user import User
         # from models.state import State
         # from models.city import City
         # from models.amenity import Amenity
         # from models.place import Place
         # from models.review import Review
 
-        classes = {"BaseModel": BaseModel
-                #    "User": User,
+        classes = {"BaseModel": BaseModel,
+                   "User": User,
                 #    "State": State,
                 #    "City": City,
                 #    "Amenity": Amenity,
@@ -48,9 +49,9 @@ class FileStorage:
     
     def save(self):
         """serializes __objects to the JSON file (path: __file_path)"""
-        with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
+        with open(FileStorage.__file_path, "w", encoding="utf-8") as fd:
             d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
-            json.dump(d, f)
+            json.dump(d, fd)
 
     def reload(self):
         """deserializes the JSON file to __objects, only if the JSON file (__file_path) exists;
