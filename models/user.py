@@ -8,4 +8,9 @@ class User(BaseModel):
     """ The User class defines all attributes
         and methods for managing a User.  
     """
-    pass
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
