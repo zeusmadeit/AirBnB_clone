@@ -3,7 +3,7 @@
 
 import cmd
 from models.base_model import BaseModel
-from models.engine.file_storage import FileStorage
+from models import storage
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
@@ -45,7 +45,6 @@ class HBNBCommand(cmd.Cmd):
                 return
             obj_id = args[1]
             key = "{}.{}".format(class_name, obj_id)
-            storage = FileStorage()
             storage.reload()
             all_objs = storage.all()
             if key in all_objs:
@@ -68,7 +67,6 @@ class HBNBCommand(cmd.Cmd):
                 return
             obj_id = args[1]
             key = "{}.{}".format(class_name, obj_id)
-            storage = FileStorage()
             storage.reload()
             all_objs = storage.all()
             if key in all_objs:
@@ -82,7 +80,6 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """Print all string representations of all instances."""
         args = arg.split()
-        storage = FileStorage()
         storage.reload()
         all_objs = storage.all()
         if not args:
@@ -108,7 +105,6 @@ class HBNBCommand(cmd.Cmd):
                 return
             obj_id = args[1]
             key = "{}.{}".format(class_name, obj_id)
-            storage = FileStorage()
             storage.reload()
             all_objs = storage.all()
             if key not in all_objs:
