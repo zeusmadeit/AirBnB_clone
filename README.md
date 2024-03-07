@@ -94,7 +94,7 @@ $ python3 unittest -m tests/test_console.py
 ```
 
 
-### Authors
-Abraham Paul | Github: ZeusMadeIt
+## Authors :black_nib:
 
-Wesam Eldeeb | Github: wesam-c
+* **Abraham Paul** <[ZeusMadeIt](https://github.com/ZeusMadeIt)>
+* **Wesam Eldeeb** <[wesam-c](https://github.com/wesam-c)>
