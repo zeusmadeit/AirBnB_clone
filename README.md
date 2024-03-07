@@ -85,33 +85,34 @@ e37ebcd3-f8e1-4c1f-8095-7a019070b1fa
 (hbnb)
 user@ubuntu:~/AirBnB$ ./console.py
 ```
-Available commands and what they do
+Available commands and what they do.
 The recognizable commands by the interpreter are the following:
 
-|Command	| Description |
-|quit or EOF |	Exits the program |
-|Usage	|By itself|
+Command	Description
 -----	-----
-|help	|Provides a text describing how to use a command.|
-|Usage	|By itself --or-- help <command>|
+quit or EOF	Exits the program
+Usage	By itself
 -----	-----
-|create	|Creates a new instance of a valid Class, saves it (to the JSON file) and prints the id. Valid classes are: BaseModel, User, State, City, Amenity, Place, Review.|
-|Usage	|create <class name>|
+help	Provides a text describing how to use a command.
+Usage	By itself --or-- help <command>
 -----	-----
-|show	|Prints the string representation of an instance based on the class name and id|
-|Usage	|show <class name> <id> --or-- <class name>.show(<id>)|
+create	Creates a new instance of a valid Class, saves it (to the JSON file) and prints the id. Valid classes are: BaseModel, User, State, City, Amenity, Place, Review.
+Usage	create <class name>
 -----	-----
-|destroy	|Deletes an instance based on the class name and id (saves the change into a JSON file).|
-|Usage	|destroy <class name> <id> --or-- .destroy()|
+show	Prints the string representation of an instance based on the class name and id
+Usage	show <class name> <id> --or-- <class name>.show(<id>)
 -----	-----
-|all	|Prints all string representation of all instances based or not on the class name.|
-|Usage	|By itself or all <class name> --or-- <class name>.all()|
+destroy	Deletes an instance based on the class name and id (saves the change into a JSON file).
+Usage	destroy <class name> <id> --or-- .destroy()
 -----	-----
-|update	|Updates an instance based on the class name and id by adding or updating attribute (saves the changes into a JSON file).|
-|Usage	|update <class name> <id> <attribute name> "<attribute value>" ---or--- <class name>.update(<id>, <attribute name>, <attribute value>) --or-- <class name>.update(<id>, <dictionary representation>)|
+all	Prints all string representation of all instances based or not on the class name.
+Usage	By itself or all <class name> --or-- <class name>.all()
 -----	-----
-|count	|Retrieve the number of instances of a class.|
-|Usage	|<class name>.count()|
+update	Updates an instance based on the class name and id by adding or updating attribute (saves the changes into a JSON file).
+Usage	update <class name> <id> <attribute name> "<attribute value>" ---or--- <class name>.update(<id>, <attribute name>, <attribute value>) --or-- <class name>.update(<id>, <dictionary representation>)
+-----	-----
+count	Retrieve the number of instances of a class.
+Usage	<class name>.count()
 
 ### Authors
 Abraham Paul | Github: ZeusMadeIt
