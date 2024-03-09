@@ -32,4 +32,6 @@ class TestBaseModel(unittest.TestCase):
         bm = BaseModel()
         temp = bm.to_dict()
         self.assertIsInstance(temp, dict)
-        
+
+if __name__ == "__main__":
+    unittest.main()
